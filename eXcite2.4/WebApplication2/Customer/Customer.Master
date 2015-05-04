@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Customer.Master.cs" Inherits="WebApplication2.User" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>Pizzeria Da Mapo - Pagina de Utilizator</title>
+    <link rel="stylesheet" type="text/css" href="../andreas00.css" media="screen,projection" />
+    <link rel="shortcut icon" href="../favicon.gif" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <div id="wrap">
+    <div id="header">
+	    <asp:Label ID="Label1" runat="server" Text='<% Session["userName"].toString() %>'></asp:Label>
+             <br />
+        <a href="../Visitor/HomeV.aspx">Sign Out</a>      </div>
+
+    <div id="avmenu">
+      <h2 class="hide">Site menu:</h2>
+      <ul>
+        <li><a href="HomeU.aspx">Acasa</a></li>
+        <li><a href="MenuU.aspx">Meniu</a></li>
+        <li><a href="OrderU.aspx">Comenzi</a></li>
+      </ul>
+
+      <div class="announce">
+        <h2>Despre noi</h2>
+        <p>
+		<img src="../img/about-14.jpg" style="width: 138px">
+        Andreas00 v1.1 is released, with minor updates and fixes.</p>
+      </div>
+    </div>
+
+    <div id="contentwide">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+               </asp:ContentPlaceHolder>
+    </div>
+
+    <div id="footer">
+        <p>Copyright &copy;2008 Stitch | Thanks to <a href="http://www.sendflowersto.com">Send Flowers</a> | Design by <a href="http://andreasviklund.com">Andreas Viklund</a>.</p>
+    </div>
+  </div>
+ </form>
+</body>
+</html>

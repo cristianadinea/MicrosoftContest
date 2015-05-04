@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="stitchDB" Class="ProductDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\stitchDB.mdf;Integrated Security=True;User Instance=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="stitchDBConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.CPizzaIngredient" Member="CPizzaIngredients">
+    <Type Name="CPizzaIngredient">
+      <Column Name="PizzaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IngredientID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ConnectionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="CPizzaIngredient_Ingredient" Member="Ingredients" ThisKey="IngredientID" OtherKey="IngredientID" Type="Ingredient" />
+      <Association Name="Pizza_CPizzaIngredient" Member="Pizza" ThisKey="PizzaID" Type="Pizza" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pizza" Member="Pizzas">
+    <Type Name="Pizza">
+      <Column Name="PizzaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nume" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Gramaj" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Pizza_CPizzaIngredient" Member="CPizzaIngredients" OtherKey="PizzaID" Type="CPizzaIngredient" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Ingredients" Member="Ingredients">
+    <Type Name="Ingredient">
+      <Column Name="IngredientID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="Ambalaj" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="UnitPrice" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Incompatibilities" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CPizzaIngredient_Ingredient" Member="CPizzaIngredient" ThisKey="IngredientID" OtherKey="IngredientID" Type="CPizzaIngredient" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IsAdmin" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Banned" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orders" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="City" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="[Order]" Member="Order1" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="UserID" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+</Database>

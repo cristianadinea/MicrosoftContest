@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Product">
+  <DataContextMoniker Name="/ProductDataContext" />
+  <nestedChildShapes>
+    <classShape Id="b7acf86e-44ad-4a21-8e6a-fcf790f3b729" absoluteBounds="3.375, 2.25, 2, 1.424847819010417">
+      <DataClassMoniker Name="/ProductDataContext/CPizzaIngredient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a33593ef-3a4f-4fed-bc76-dc843781c159" absoluteBounds="3.3899999999999997, 2.71, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0fffa108-bf3c-4ae5-8379-888ace174756" absoluteBounds="6.5, 2.375, 2, 1.424847819010417">
+      <DataClassMoniker Name="/ProductDataContext/Pizza" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6652c754-358d-47fe-8730-17c4cf32fe75" absoluteBounds="6.515, 2.835, 1.9700000000000002, 0.86484781901041663" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(6.5 : 3.10179768880208); (5.375 : 3.10179768880208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/ProductDataContext/Pizza/Pizza_CPizzaIngredient" />
+      <nodes>
+        <classShapeMoniker Id="0fffa108-bf3c-4ae5-8379-888ace174756" />
+        <classShapeMoniker Id="b7acf86e-44ad-4a21-8e6a-fcf790f3b729" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="1a280b84-4b26-4e89-9a29-15581152acd0" absoluteBounds="0.5, 2.25, 2, 1.5891951497395831">
+      <DataClassMoniker Name="/ProductDataContext/Ingredient" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d668f735-794f-4763-9955-c444f25148ed" absoluteBounds="0.51500000000000012, 2.71, 1.9700000000000002, 1.0291951497395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.375 : 2.96242390950521); (2.5 : 2.96242390950521)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/ProductDataContext/CPizzaIngredient/CPizzaIngredient_Ingredient" />
+      <nodes>
+        <classShapeMoniker Id="b7acf86e-44ad-4a21-8e6a-fcf790f3b729" />
+        <classShapeMoniker Id="1a280b84-4b26-4e89-9a29-15581152acd0" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c4d8d117-7346-40cc-b3b8-00a05905d5e6" absoluteBounds="3, 5, 2, 2.0822371419270831">
+      <DataClassMoniker Name="/ProductDataContext/User" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4734aa62-0d4f-4ab6-aba3-26902753456f" absoluteBounds="3.015, 5.46, 1.9700000000000002, 1.5222371419270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="800ce1d5-e562-4d3a-aa60-19feb41bfbc1" absoluteBounds="6.125, 5.125, 2, 1.75354248046875">
+      <DataClassMoniker Name="/ProductDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7b676220-9ffc-4045-a453-b27a2f8ac8c0" absoluteBounds="6.14, 5.585, 1.9700000000000002, 1.19354248046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

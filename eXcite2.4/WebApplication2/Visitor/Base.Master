@@ -1,0 +1,53 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Base.Master.cs" Inherits="WebApplication2.Site1" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>Pizzeria Da Mapo</title>
+    <link rel="stylesheet" type="text/css" href="../andreas00.css" media="screen,projection" />
+    <link rel="shortcut icon" href="../favicon.gif" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+     <div id="wrap">
+    <div id="header">
+           
+                   
+             </div>
+
+    <div id="avmenu">
+      <h2 class="hide">Site menu:</h2>
+      <ul>
+        <li><a href="HomeV.aspx">Acasa</a></li>
+        <li><a href="MenuV.aspx">Meniu</a></li>
+      </ul>
+
+      <div class="announce">
+        <h2>Despre noi</h2>
+        <p>
+		<img src="../img/about-14.jpg" style="width: 141px">
+        Andreas00 v1.1 is released, with minor updates and fixes.</p>
+            </div>
+    </div>
+
+    <div id="contentwide">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+               </asp:ContentPlaceHolder>
+    </div>
+<div id="content img, contentwide img, contentfull img">
+     <asp:Login ID="Login1" runat="server" onauthenticate="Login1_Authenticate" 
+               BackColor="#F7F7DE" BorderColor="#CCCC99" BorderStyle="Solid" 
+               BorderWidth="1px" Font-Names="Verdana" Font-Size="10pt">
+                        <TitleTextStyle BackColor="#6B696B" Font-Bold="True" ForeColor="#FFFFFF" />
+                    </asp:Login>
+</div>
+    <div id="footer">
+        <p>Copyright ©2008 Stitch </p>
+    </div>
+  </div>
+ </form>
+</body>
+</html>
